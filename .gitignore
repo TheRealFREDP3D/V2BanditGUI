@@ -207,3 +207,4 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 /e2e/__pycache__
+.cursor/rules/uv-python-usage-guide.mdc
