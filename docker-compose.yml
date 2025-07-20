@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+    command: serve
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    volumes:
+      - ./app:/code/app
+      - ./static:/code/static
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+volumes:
+  ollama:

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Bandit-NG</title>
+  <link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+  <div class="split">
+    <aside id="sidebar">
+      <button id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h2>Neo Mentor</h2>
+      <button id="askBtn" disabled>Ask Mentor (Ctrl-M)</button>
+      <select id="modelSel">
+        <option>qwen2.5:1.5b (local)</option>
+      </select>
+      <pre id="advice"></pre>
+    </aside>
+    <div id="drag-handle" tabindex="0" aria-label="Resize sidebar"></div>
+    <main id="terminal"></main>
+  </div>
+
+  <script type="module" src="/static/js/terminal.js"></script>
+  <script type="module" src="/static/js/mentor.js"></script>
+</body>
+</html>
