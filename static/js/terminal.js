@@ -8,7 +8,7 @@ term.open(document.getElementById("terminal"));
 fit.fit();
 term.clear(); // Clear the terminal panel on main page load
 
-const ws = new WebSocket(`ws://${location.host}/pty`);
+const ws = new WebSocket(`wss://${location.host}/pty`);
 ws.onopen = () => {};
 ws.onmessage = (e) => term.write(e.data);
 term.onData((d) => ws.send(d));
