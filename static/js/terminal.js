@@ -47,7 +47,7 @@ let isConnected = false;
 let connectionAttempts = 0;
 const maxRetries = 3;
 
-function updateConnectionStatus(status, message) {
+export function updateConnectionStatus(status, message) {
   const connectionStatus = document.getElementById('connectionStatus');
   if (connectionStatus) {
     const indicator = connectionStatus.querySelector('.status-indicator');
