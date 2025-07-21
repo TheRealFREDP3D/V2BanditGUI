@@ -85,7 +85,7 @@ function connectWebSocket() {
     if (connectionAttempts < maxRetries) {
       connectionAttempts++;
       updateConnectionStatus('connecting', `Reconnecting... (${connectionAttempts}/${maxRetries})`);
-      setTimeout(() => connectWebSocket(), 2000 * connectionAttempts);
+      setTimeout(() => connectWebSocket(), 1000 * Math.pow(2, connectionAttempts));
     } else {
       updateConnectionStatus('disconnected', 'Connection failed');
       term.write('\r\n\x1b[31mConnection lost. Please refresh the page to reconnect.\x1b[0m\r\n');
