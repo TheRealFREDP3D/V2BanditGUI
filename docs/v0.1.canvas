@@ -1,0 +1,329 @@
+{
+  "nodes": [
+    {
+      "type": "text",
+      "id": "6808b7bb-1f9d-419f-89a8-bed1127b84b1",
+      "x": -899.3377373899625,
+      "y": 812.5656952258234,
+      "width": 106,
+      "height": 108,
+      "color": "6",
+      "text": "---\ntext-align: center\n\n---\n\n \n ## User  \n User"
+    },
+    {
+      "type": "nested-canvas",
+      "id": "2723b713-4984-4c32-9c8f-759f2e495ddf",
+      "x": -643.3377373899625,
+      "y": 776.5656952258234,
+      "width": 420,
+      "height": 180,
+      "canvas": {
+        "nodes": [
+          {
+            "type": "text",
+            "id": "565efa0e-2b06-4822-aa80-21fba71d58da",
+            "x": 268,
+            "y": 528,
+            "width": 176,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"static/index.html\",\"static/styles.css\"]\ntext-align: center\n\n--- \n## UI Renderer  \n  HTML, CSS"
+          },
+          {
+            "type": "text",
+            "id": "2212cb26-f1de-42fe-8e4c-b3b51f0d9a13",
+            "x": 12,
+            "y": 12,
+            "width": 171,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"static/js/terminal.js\"]\ntext-align: center\n\n--- \n## Terminal JS  \n  JavaScript"
+          },
+          {
+            "type": "text",
+            "id": "135a987d-bd27-4f95-8073-bfa59fc5d0d2",
+            "x": 12,
+            "y": 270,
+            "width": 186,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"static/js/mentor.js\"]\ntext-align: center\n\n--- \n## Mentor UI JS  \n  JavaScript"
+          },
+          {
+            "type": "text",
+            "id": "80f1aefd-712b-45cf-bf25-162904c66c09",
+            "x": 12,
+            "y": 528,
+            "width": 106,
+            "height": 108,
+            "color": "1",
+            "text": "---\ntext-align: center\n\n---\n\n \n ## User  \n User"
+          }
+        ],
+        "edges": [
+          {
+            "id": "63f777b1-26f0-4ecb-ae3a-0814982a8586",
+            "fromNode": "80f1aefd-712b-45cf-bf25-162904c66c09",
+            "fromSide": "right",
+            "toNode": "565efa0e-2b06-4822-aa80-21fba71d58da",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Uses"
+          }
+        ]
+      },
+      "title": "Web Browser | HTML, CSS, JavaScript"
+    },
+    {
+      "type": "nested-canvas",
+      "id": "55460c48-f703-46a2-a4c8-e062ba408567",
+      "x": -73.33773738996251,
+      "y": 776.5656952258234,
+      "width": 420,
+      "height": 180,
+      "canvas": {
+        "nodes": [
+          {
+            "type": "text",
+            "id": "f30444ef-b81d-4a92-97f8-4cbac2b96693",
+            "x": 348,
+            "y": 428,
+            "width": 226,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"app/main.py\"]\ntext-align: center\n\n--- \n## Main Application  \n  Python, FastAPI"
+          },
+          {
+            "type": "text",
+            "id": "cd6d292f-4e41-41a2-b9b3-e5f58998da0f",
+            "x": 780,
+            "y": 410,
+            "width": 190,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"app/mentor.py\"]\ntext-align: center\n\n--- \n## Mentor Logic  \n  Python"
+          },
+          {
+            "type": "text",
+            "id": "222744cc-704c-419e-9a63-71d62465cbab",
+            "x": 12,
+            "y": 12,
+            "width": 216,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"app/config.py\"]\ntext-align: center\n\n--- \n## Config Manager  \n  Python"
+          },
+          {
+            "type": "text",
+            "id": "95be0eaf-7a81-4efb-b1d1-4b3a9077c8fd",
+            "x": 1148,
+            "y": 392,
+            "width": 175,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"app/data/models.py\",\"app/data/all_data.json\",\"app/data/levels_info.json\",\"app/data/commands_data.json\",\"app/data/geek_quotes.json\"]\ntext-align: center\n\n--- \n## Data Access  \n  Python"
+          },
+          {
+            "type": "text",
+            "id": "cb88fd6d-78f6-4060-b864-b6aafe64b3fb",
+            "x": 724,
+            "y": 568,
+            "width": 274,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"app/bandit_title_screen.py\"]\ntext-align: center\n\n--- \n## Title Screen Generator  \n  Python"
+          },
+          {
+            "type": "text",
+            "id": "da25d844-28a2-47c1-acb3-9fa5106c3116",
+            "x": 1148,
+            "y": 550,
+            "width": 197,
+            "height": 108,
+            "color": "6",
+            "text": "---\nfiles: [\"litellm/__init__.py\"]\ntext-align: center\n\n--- \n## LiteLLM Proxy  \n  Python, LiteLLM"
+          },
+          {
+            "type": "text",
+            "id": "316ca8d4-1618-4f5a-8b42-032b829af8b4",
+            "x": 22,
+            "y": 586,
+            "width": 176,
+            "height": 108,
+            "color": "1",
+            "text": "---\nfiles: [\"static/index.html\",\"static/styles.css\"]\ntext-align: center\n\n--- \n## UI Renderer  \n  HTML, CSS"
+          },
+          {
+            "type": "text",
+            "id": "ceae310d-71cb-472a-aa69-446ef5dc09ed",
+            "x": 27,
+            "y": 428,
+            "width": 171,
+            "height": 108,
+            "color": "1",
+            "text": "---\nfiles: [\"static/js/terminal.js\"]\ntext-align: center\n\n--- \n## Terminal JS  \n  JavaScript"
+          },
+          {
+            "type": "text",
+            "id": "a90c7227-8825-4991-b68a-5890e022448c",
+            "x": 12,
+            "y": 270,
+            "width": 186,
+            "height": 108,
+            "color": "1",
+            "text": "---\nfiles: [\"static/js/mentor.js\"]\ntext-align: center\n\n--- \n## Mentor UI JS  \n  JavaScript"
+          }
+        ],
+        "edges": [
+          {
+            "id": "4dea5e05-63df-48f7-96a4-d3d579c6f674",
+            "fromNode": "f30444ef-b81d-4a92-97f8-4cbac2b96693",
+            "fromSide": "right",
+            "toNode": "cd6d292f-4e41-41a2-b9b3-e5f58998da0f",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Delegates requests to"
+          },
+          {
+            "id": "f8abb8af-feb4-407a-ab42-538fd2b50cc1",
+            "fromNode": "f30444ef-b81d-4a92-97f8-4cbac2b96693",
+            "fromSide": "right",
+            "toNode": "cb88fd6d-78f6-4060-b864-b6aafe64b3fb",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Requests content from"
+          },
+          {
+            "id": "64beb54f-72ef-4556-ba29-7c303e143882",
+            "fromNode": "cd6d292f-4e41-41a2-b9b3-e5f58998da0f",
+            "fromSide": "right",
+            "toNode": "95be0eaf-7a81-4efb-b1d1-4b3a9077c8fd",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Retrieves data from"
+          },
+          {
+            "id": "e4a35014-f888-485c-b715-bb447600ed1b",
+            "fromNode": "cd6d292f-4e41-41a2-b9b3-e5f58998da0f",
+            "fromSide": "right",
+            "toNode": "da25d844-28a2-47c1-acb3-9fa5106c3116",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Sends prompts to"
+          },
+          {
+            "id": "41078127-878d-4934-9990-916eb2bfb84a",
+            "fromNode": "316ca8d4-1618-4f5a-8b42-032b829af8b4",
+            "fromSide": "right",
+            "toNode": "f30444ef-b81d-4a92-97f8-4cbac2b96693",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Requests content"
+          },
+          {
+            "id": "004e2677-f134-4798-8e6e-4aa881982768",
+            "fromNode": "ceae310d-71cb-472a-aa69-446ef5dc09ed",
+            "fromSide": "right",
+            "toNode": "f30444ef-b81d-4a92-97f8-4cbac2b96693",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Sends commands to"
+          },
+          {
+            "id": "eb94b8e5-b485-4f95-991d-65f5e551461e",
+            "fromNode": "a90c7227-8825-4991-b68a-5890e022448c",
+            "fromSide": "right",
+            "toNode": "f30444ef-b81d-4a92-97f8-4cbac2b96693",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Sends queries to"
+          }
+        ]
+      },
+      "title": "Backend Service | Python, FastAPI, Uvicorn"
+    },
+    {
+      "type": "nested-canvas",
+      "id": "a7f0fe1b-89b3-4b3a-9dea-923a0dd509eb",
+      "x": 496.6622626100375,
+      "y": 776.5656952258234,
+      "width": 420,
+      "height": 180,
+      "canvas": {
+        "nodes": [
+          {
+            "type": "text",
+            "id": "25cd3d5b-0814-436c-862c-fe042a9b94d8",
+            "x": 359,
+            "y": 270,
+            "width": 173,
+            "height": 108,
+            "color": "6",
+            "text": "## OpenAI API  \n  OpenAI API"
+          },
+          {
+            "type": "text",
+            "id": "3ab6a45a-cf87-44bc-80fc-054df2e41ef7",
+            "x": 12,
+            "y": 12,
+            "width": 201,
+            "height": 108,
+            "color": "6",
+            "text": "## Other LLM API  \n  LLM API"
+          },
+          {
+            "type": "text",
+            "id": "6d7c97d2-082f-4821-8dd3-1cff91091411",
+            "x": 12,
+            "y": 270,
+            "width": 197,
+            "height": 108,
+            "color": "1",
+            "text": "---\nfiles: [\"litellm/__init__.py\"]\ntext-align: center\n\n--- \n## LiteLLM Proxy  \n  Python, LiteLLM"
+          }
+        ],
+        "edges": [
+          {
+            "id": "be795ba3-72f9-4c0d-995e-e555c42ea7d9",
+            "fromNode": "6d7c97d2-082f-4821-8dd3-1cff91091411",
+            "fromSide": "right",
+            "toNode": "25cd3d5b-0814-436c-862c-fe042a9b94d8",
+            "toSide": "left",
+            "toEnd": "arrow",
+            "label": "Forwards requests to"
+          }
+        ]
+      },
+      "title": "External LLM Providers | Various LLM APIs"
+    }
+  ],
+  "edges": [
+    {
+      "id": "63f777b1-26f0-4ecb-ae3a-0814982a8586",
+      "fromNode": "6808b7bb-1f9d-419f-89a8-bed1127b84b1",
+      "fromSide": "right",
+      "toNode": "2723b713-4984-4c32-9c8f-759f2e495ddf",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Uses"
+    },
+    {
+      "id": "41078127-878d-4934-9990-916eb2bfb84a",
+      "fromNode": "2723b713-4984-4c32-9c8f-759f2e495ddf",
+      "fromSide": "right",
+      "toNode": "55460c48-f703-46a2-a4c8-e062ba408567",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Requests content"
+    },
+    {
+      "id": "be795ba3-72f9-4c0d-995e-e555c42ea7d9",
+      "fromNode": "55460c48-f703-46a2-a4c8-e062ba408567",
+      "fromSide": "right",
+      "toNode": "a7f0fe1b-89b3-4b3a-9dea-923a0dd509eb",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "Forwards requests to"
+    }
+  ]
+}

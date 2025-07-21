@@ -208,3 +208,4 @@ __marimo__/
 .streamlit/secrets.toml
 /e2e/__pycache__
 .cursor/rules/uv-python-usage-guide.mdc
+/memory-bank

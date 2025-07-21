@@ -1,10 +1,10 @@
-MODELS_LIST =  {
+MODELS_LIST = {
     "anthropic_models": [
         "claude-3-5-haiku-latest",
         "claude-3-5-sonnet-latest",
         "claude-3-7-sonnet-latest",
         "claude-sonnet-4-0",
-        "claude-opus-4-0"
+        "claude-opus-4-0",
     ],
     "mistral_models": [
         "mistral-saba-latest",
@@ -12,7 +12,7 @@ MODELS_LIST =  {
         "mistral-large-latest",
         "codestral-latest",
         "pixtral-large-latest",
-        "magistral-medium-latest"
+        "magistral-medium-latest",
     ],
     "openai_models": [
         "gpt-4.1-nano",
@@ -25,7 +25,7 @@ MODELS_LIST =  {
         "o3-mini",
         "o3",
         "o3-pro",
-        "o4-mini"
+        "o4-mini",
     ],
     "grok_models": [
         "grok-4-latest",
@@ -33,16 +33,10 @@ MODELS_LIST =  {
         "grok-3-fast-latest",
         "grok-3-mini-latest",
         "grok-3-mini-fast-latest",
-        "grok-2-vision-latest"
+        "grok-2-vision-latest",
     ],
-    "gemini_models": [
-        "gemini-2.5-flash",
-        "gemini-2.5-pro"
-    ],
-    "deepseek_models": [
-        "deepseek-chat",
-        "deepseek-reasoner"
-    ],
+    "gemini_models": ["gemini-2.5-flash", "gemini-2.5-pro"],
+    "deepseek_models": ["deepseek-chat", "deepseek-reasoner"],
     "alibaba_models": [
         "qwen-turbo-latest",
         "qwen-plus-latest",
@@ -50,19 +44,12 @@ MODELS_LIST =  {
         "qwq-plus",
         "qvq-max",
         "qwen-vl-max",
-        "qwen-vl-plus"
+        "qwen-vl-plus",
     ],
-    "inception_models": [
-        "mercury",
-        "mercury-coder"
-    ],
-    "moonshot_models": [
-        "kimi-latest",
-        "kimi-k2-0711-preview",
-        "kimi-thinking-preview"
-    ]
+    "inception_models": ["mercury", "mercury-coder"],
+    "moonshot_models": ["kimi-latest", "kimi-k2-0711-preview", "kimi-thinking-preview"],
 }
-MODELS_MAX_TOKEN =  {
+MODELS_MAX_TOKEN = {
     "gpt-4.1-nano": 32768,
     "gpt-4.1-mini": 32768,
     "gpt-4o-mini": 16384,
@@ -106,5 +93,5 @@ MODELS_MAX_TOKEN =  {
     "mercury-coder": 32000,
     "kimi-latest": 131072,
     "kimi-k2-0711-preview": 131072,
-    "kimi-thinking-preview": 131072
+    "kimi-thinking-preview": 131072,
 }

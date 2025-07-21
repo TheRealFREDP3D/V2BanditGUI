@@ -46,8 +46,16 @@ sidebarToggle.addEventListener("click", () => {
   } else {
     document.documentElement.style.setProperty("--sidebar-width", "300px");
   }
-  if (window.term && window.term._core && window.fit) window.fit.fit();
+  resizeAndFitTerminal();
 });
+
+// Function to resize sidebar and fit terminal
+function resizeAndFitTerminal(newWidth) {
+  if (newWidth) {
+    document.documentElement.style.setProperty("--sidebar-width", `${newWidth}px`);
+  }
+  if (window.term && window.term._core && window.fit) window.fit.fit();
+}
 
 // Drag handle logic
 let isDragging = false;
@@ -62,8 +70,7 @@ document.addEventListener("mousemove", (e) => {
   let newWidth = e.clientX;
   if (newWidth < min) newWidth = min;
   if (newWidth > max) newWidth = max;
-  document.documentElement.style.setProperty("--sidebar-width", `${newWidth}px`);
-  if (window.term && window.term._core && window.fit) window.fit.fit();
+  resizeAndFitTerminal(newWidth);
 });
 document.addEventListener("mouseup", () => {
   if (isDragging) {
@@ -80,10 +87,10 @@ dragHandle.addEventListener("keydown", (e) => {
   let current = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--sidebar-width")) || 300;
   if (e.key === "ArrowLeft") {
     current = Math.max(40, current - 20);
-    document.documentElement.style.setProperty("--sidebar-width", `${current}px`);
-    if (window.term && window.term._core && window.fit) window.fit.fit();
+    resizeAndFitTerminal(current);
     e.preventDefault();
   } else if (e.key === "ArrowRight") {
+
     current = Math.min(window.innerWidth - 100, current + 20);
     document.documentElement.style.setProperty("--sidebar-width", `${current}px`);
     if (window.term && window.term._core && window.fit) window.fit.fit();
