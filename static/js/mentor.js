@@ -42,7 +42,7 @@ function addMessage(author, text, isUser = false) {
   
   const messageText = document.createElement('div');
   messageText.className = 'message-text';
-  messageText.innerHTML = text.replace(/\n/g, '<br>');
+  messageText.textContent = text;
   
   header.appendChild(authorSpan);
   header.appendChild(timeSpan);
