@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Browser
+    participant TerminalJS as terminal.js
+    participant WebSocketServer
+    Browser->>TerminalJS: Load terminal.js
+    TerminalJS->>WebSocketServer: Connect via wss://<host>/pty
+    WebSocketServer-->>TerminalJS: WebSocket connection established
+    TerminalJS-->>Browser: Terminal ready for user input
+    Browser->>TerminalJS: User types command
+    TerminalJS->>WebSocketServer: Send command data
+    WebSocketServer-->>TerminalJS: Send terminal output
+    TerminalJS-->>Browser: Display output

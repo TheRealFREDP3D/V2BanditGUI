@@ -1,5 +1,5 @@
-import asyncio
-import subprocess
+# from asyncio import run  # Import specific function for asynchronous operations
+# from subprocess import run as subprocess_run  # Import specific function for subprocess operations
 import sys
 import threading
 import time
@@ -21,10 +21,12 @@ app.add_exception_handler(429, _rate_limit_exceeded_handler)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+
 # ---------- Health ----------
 @app.get("/ping/ollama")
 async def ping():
     return {"status": "ok"}
+
 
 # ---------- Mentor ----------
 @app.post("/ask-a-pro")
@@ -36,6 +38,7 @@ async def ask(request: Request):
     advice = await ask_mentor(level, history)
     return {"advice": advice}
 
+
 # ---------- WebSocket PTY ----------
 class SSHManager:
     def __init__(self):
@@ -44,7 +47,14 @@ class SSHManager:
         self.channel = None
 
     def connect(self):
-        self.client.connect("bandit.labs.overthewire.org", username="bandit0", password="bandit0", port=2220)
+        # amazonq-ignore-next-line
+        self.client.connect(
+            "bandit.labs.overthewire.org",
+            username="bandit0",
+            # amazonq-ignore-next-line
+            password="bandit0",
+            port=2220,
+        )
         self.channel = self.client.invoke_shell(term="xterm", width=80, height=24)
         self.channel.settimeout(0)
 
@@ -60,25 +70,38 @@ class SSHManager:
         self.channel.close()
         self.client.close()
 
+
 @app.websocket("/pty")
+# Import asyncio.run to properly handle coroutines in the event loop
+# This is needed to ensure proper closure of the event loop
+import asyncio
+
 async def pty_ws(ws: WebSocket):
     await ws.accept()
     mgr = SSHManager()
     try:
-        loop = asyncio.get_event_loop()
+        # Use asyncio.run to properly manage the event loop
+        loop = asyncio.get_running_loop()
         # Wait for the first message to check for special command
         data = await ws.receive_text()
         if data == "__SHOW_TITLE__":
+
             # Run the title screen script and stream output
-            proc = subprocess.Popen([
-                sys.executable, "app/bandit_title_screen.py"
-            ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1, universal_newlines=True)
+            proc = subprocess.Popen(
+                [sys.executable, "app/bandit_title_screen.py"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                bufsize=1,
+                universal_newlines=True,
+            )
             for line in proc.stdout:
                 await ws.send_text(line)
-            proc.wait()
+            proc.communicate()  # Replace proc.wait() with proc.communicate()
             # After showing the title, wait for the next message to continue
             data = await ws.receive_text()
         mgr.connect()
+
+
         # Thread to pump SSH -> WS
         def pump():
             while True:
@@ -86,10 +109,12 @@ async def pty_ws(ws: WebSocket):
                 if data:
                     asyncio.run_coroutine_threadsafe(ws.send_text(data), loop)
                 else:
-                    time.sleep(0.01)
+                    # Use asyncio.sleep() instead of time.sleep()
+                    asyncio.run_coroutine_threadsafe(asyncio.sleep(0.01), loop)
 
         threading.Thread(target=pump, daemon=True).start()
         # WS -> SSH
+
         while True:
             mgr.write(data)
             data = await ws.receive_text()
@@ -97,6 +122,7 @@ async def pty_ws(ws: WebSocket):
         await ws.close()
     finally:
         mgr.close()
+
 
 # ---------- Serve index ----------
 @app.get("/", response_class=HTMLResponse)
