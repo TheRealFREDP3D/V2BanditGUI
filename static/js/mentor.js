@@ -92,8 +92,7 @@ dragHandle.addEventListener("keydown", (e) => {
   } else if (e.key === "ArrowRight") {
 
     current = Math.min(window.innerWidth - 100, current + 20);
-    document.documentElement.style.setProperty("--sidebar-width", `${current}px`);
-    if (window.term && window.term._core && window.fit) window.fit.fit();
+    resizeAndFitTerminal(current);
     e.preventDefault();
   }
 });
