@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+import datetime
+
 """
 BanditGUI Title Screen Module
 Enhanced terminal interface for OverTheWire Bandit wargame web application.
