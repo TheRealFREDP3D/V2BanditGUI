@@ -129,7 +129,13 @@ def glitch_effect(text: str, glitch_times: int = 5, delay: float = 0.1):
             else:
                 glitched.append(char)
 
-        print("".join(glitched), end="\r")
+        # Ensure the line is cleared if the new output is shorter than the previous
+        output = "".join(glitched)
+        if not hasattr(print, "_prev_len"):
+            print._prev_len = 0
+        pad_len = max(print._prev_len - len(output), 0)
+        print(output + " " * pad_len, end="\r")
+        print._prev_len = len(output)
         time.sleep(delay)
 
     print(text)
